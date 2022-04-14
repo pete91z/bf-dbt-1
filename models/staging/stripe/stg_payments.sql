@@ -5,7 +5,7 @@ with payments as (
     status,
     amount,
     created as created_date
-    from stripe.payment
+    from {{ source('stripe', 'payment') }}
 )
 
 select * from payments
