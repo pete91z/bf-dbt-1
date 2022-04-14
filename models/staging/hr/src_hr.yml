@@ -6,3 +6,8 @@ sources:
     schema: hr
     tables:
       - name: person
+  - name: dbreeze
+    database: dbreeze
+    schema: dbreeze
+    tables:
+      - name: incr_control

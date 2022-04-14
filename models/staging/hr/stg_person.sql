@@ -42,7 +42,7 @@ with person as (
     status_review_date,
     leave_date from {{ source('hr', 'person') }}
     {% if is_incremental() %}
-      where last_update_date::timestamp > (select fetch_timestamp::timestamp from dbreeze.incr_control where model_name='stg_person')
+      where last_update_date::timestamp > (select fetch_timestamp::timestamp from {{ source('dbreeze', 'incr_control') }} where model_name='stg_person')
     {% endif %}
  )
 
