@@ -1,0 +1,1 @@
+select id,ni_number from {{ source('hr', 'person') }} where ni_number !~ '[a-z|A-Z]{2}[0-9]{6}[a-z|A-Z]{1}'
