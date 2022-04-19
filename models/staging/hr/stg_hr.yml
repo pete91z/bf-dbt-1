@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_person
+    columns: 
+      - name: person_id
+        tests:
+          - unique
+          - not_null
+
+      - name: ni_number
+        description: '{{doc("ni_format")}}'
+        
+      - name: gender
+        description: '{{doc("gender")}}'

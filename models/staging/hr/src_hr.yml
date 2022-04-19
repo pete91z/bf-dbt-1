@@ -6,8 +6,10 @@ sources:
     schema: hr
     tables:
       - name: person
+        description: person table from the HR database
   - name: dbreeze
     database: dbreeze
     schema: dbreeze
     tables:
       - name: incr_control
+        description: Control the incremental fetch timestamp
