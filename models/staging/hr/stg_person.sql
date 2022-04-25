@@ -50,6 +50,6 @@ with person as (
 
  {{ config(
     post_hook=[
-      "update dbreeze.incr_control set fetch_timestamp=(select max(last_update_date)::timestamp from {{ this }} where model_name='stg_person') "
+      "update dbreeze.incr_control set fetch_timestamp=(select max(last_update_date)::timestamp from {{ this }}) where model_name='stg_person' "
     ]
 ) }}
